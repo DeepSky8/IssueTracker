@@ -1,13 +1,14 @@
-    var $input = $("input"),
-    $button = $("button");    
-$button.attr('disabled', true);
+var inputs = $("input");
+var button = $("button");    
+    
+button.attr('disabled', true);
 
-$input.keyup(function() {
-    var trigger = false;
-    $input.each(function() {
+inputs.keyup(function() {
+    var trigger = trigger = trigger || !$(this).val();
+    inputs.each(function() {
         if (!$(this).val()) {
             trigger = true;
         }
     });
-    trigger ? $button.attr('disabled', true) : $button.removeAttr('disabled');
+    trigger ? button.attr('disabled', true) : button.removeAttr('disabled');
 });
