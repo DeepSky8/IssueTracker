@@ -4,11 +4,9 @@ var button = $("button");
 button.attr('disabled', true);
 
 inputs.keyup(function() {
-    var trigger = trigger = trigger || !$(this).val();
+    var trigger = false;
     inputs.each(function() {
-        if (!$(this).val()) {
-            trigger = true;
-        }
+       trigger = trigger || !$(this).val();
     });
     trigger ? button.attr('disabled', true) : button.removeAttr('disabled');
 });
