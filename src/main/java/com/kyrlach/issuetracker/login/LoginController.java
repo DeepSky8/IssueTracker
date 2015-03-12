@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.thymeleaf.expression.Strings;
 
 @Controller
 @RequestMapping("/")
@@ -30,23 +29,16 @@ public class LoginController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String login(@ModelAttribute LoginForm loginForm, Model model) {
-			User credentailCheck = new User(loginForm.getUsername(), loginForm.getPassword());
-			logger.info(loginForm);
-			User user = userRepository.findByUsername(credentailCheck.getUsername());
-			logger.info(user);
-			if(user == null) {
-				List<String> errors = new ArrayList<String>();
-				errors.add("Wrong username/password");
-				model.addAttribute("errors", errors);
-				return "login";
-			} else {
-				if(user.getPassword().equals(credentailCheck.getPassword())) {
-					return "redirect:/issues";
-				} else {
-					List<String> errors = new ArrayList<String>();
-					errors.add("Wrong username/password");
-					model.addAttribute("errors", errors);
-					return "login";
-				}
-			}
+        String retval = "login";
+		logger.info(loginForm);
+		User user = userRepository.findByUsername(loginForm.getUsername());
+		logger.info(user);
+		if(user != null && user.getPassword().equals(loginForm.getPassword())) {
+			retval = "redirect:/issues";
+		} else {
+			List<String> errors = new ArrayList<String>();
+			errors.add("Wrong username/password");
+			model.addAttribute("errors", errors);
+		}
+		return retval;
 	}}
