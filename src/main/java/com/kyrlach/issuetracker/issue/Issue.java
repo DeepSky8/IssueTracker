@@ -13,12 +13,12 @@ public class Issue {
     
     private String title;
     private String description;
+    private String difficulty;
     
-    public Issue() {}
-    
-    public Issue(String title, String description) {
+    public Issue(String title, String description, String difficulty) {
     	this.title = title;
     	this.description = description;
+    	this.difficulty = difficulty;
     }
 
 	public long getId() {
@@ -41,9 +41,16 @@ public class Issue {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-    
+
+	public String getDifficulty() {
+		return difficulty;
+	}
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
+	}
+	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+")";
+    	return "Issue("+id+","+title+","+description+","+difficulty+")";
     }
 }

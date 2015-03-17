@@ -3,6 +3,7 @@ package com.kyrlach.issuetracker.issue;
 public class IssueForm {
 	private String title;
 	private String description;
+	private String difficulty;
 	
 	public String getTitle() {
 		return title;
@@ -17,5 +18,13 @@ public class IssueForm {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public String getDifficulty() {
+		return difficulty;
+	}
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
+	}
 	
+
 }
