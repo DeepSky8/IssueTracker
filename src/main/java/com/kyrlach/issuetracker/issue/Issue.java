@@ -15,6 +15,8 @@ public class Issue {
     private String description;
     private String difficulty;
     
+    public Issue() {}
+    
     public Issue(String title, String description, String difficulty) {
     	this.title = title;
     	this.description = description;
