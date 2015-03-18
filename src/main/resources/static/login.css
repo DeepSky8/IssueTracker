@@ -3,11 +3,19 @@ body {
     background-position: left top;
 }
 
+
 .infoBoxes {
     background-color: #F0FFFF;
     padding: 25px;
     border: 25px solid #B0C4DE;
-    min-height: 170px
+}
+
+.minHeight170 {
+    min-height: 170px;
+}
+
+.maxHeight200 {
+    max-height: 200px;
 }
 
 .alignHeader1 {
@@ -37,3 +45,4 @@ body {
 .textCenter {
     text-align: center;
 }
+
