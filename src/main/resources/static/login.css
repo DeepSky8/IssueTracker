@@ -1,0 +1,48 @@
+body {
+    background-image: url("RepeatablePaper.png");
+    background-position: left top;
+}
+
+
+.infoBoxes {
+    background-color: #F0FFFF;
+    padding: 25px;
+    border: 25px solid #B0C4DE;
+}
+
+.minHeight170 {
+    min-height: 170px;
+}
+
+.maxHeight200 {
+    max-height: 200px;
+}
+
+.alignHeader1 {
+    margin-top: 108px
+}
+
+.inputMargin {
+    margin-bottom: 135px
+}
+
+.noBottom {
+   margin-bottom: 0px;
+}
+
+.noTop {
+   margin-top: 0px;
+}
+
+.smallTop {
+    margin-top: 15px;
+}
+
+.logIn {
+    margin: 135px 0px 11px 0px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
