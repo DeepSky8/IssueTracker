@@ -3,7 +3,13 @@ package com.kyrlach.issuetracker.issue;
 public class IssueForm {
 	private String title;
 	private String description;
-	private String difficulty;
+	private Number difficulty;
+
+	public IssueForm () {
+		this.title = null;
+		this.description = null;
+		this.difficulty = 1;
+	}
 	
 	public String getTitle() {
 		return title;
@@ -19,10 +25,10 @@ public class IssueForm {
 		this.description = description;
 	}
 
-	public String getDifficulty() {
+	public Number getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(String difficulty) {
+	public void setDifficulty(Number difficulty) {
 		this.difficulty = difficulty;
 	}
 	

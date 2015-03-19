@@ -13,11 +13,11 @@ public class Issue {
     
     private String title;
     private String description;
-    private String difficulty;
+    private Number difficulty;
     
     public Issue() {}
     
-    public Issue(String title, String description, String difficulty) {
+    public Issue(String title, String description, Number difficulty) {
     	this.title = title;
     	this.description = description;
     	this.difficulty = difficulty;
@@ -44,10 +44,10 @@ public class Issue {
 		this.description = description;
 	}
 
-	public String getDifficulty() {
+	public Number getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(String difficulty) {
+	public void setDifficulty(Number difficulty) {
 		this.difficulty = difficulty;
 	}
 	
