@@ -37,7 +37,7 @@ public class LoginController {
 			retval = "redirect:/issues";
 		} else {
 			List<String> errors = new ArrayList<String>();
-			errors.add("Wrong username/password");
+			errors.add("*Sorry, you've seemed to enter the wrong username and/or password, remember usernames and passwords are case sensitive.");
 			model.addAttribute("errors", errors);
 		}
 		return retval;
