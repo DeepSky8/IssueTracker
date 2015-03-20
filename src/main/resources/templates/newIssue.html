@@ -9,14 +9,26 @@
 	    <form th:object="${issueForm}" th:action="@{/issues/new}" action="#" method="post" class="pure-form pure-form-stacked">
 	    	<fieldset>
 	    		<legend>New Issue</legend>
-	    		
+	    		<br />
+	    		<br />
 	    		<label for="title">Title</label>
 	    		<input th:field="*{title}" type="text" placeholder="Title" />
-	    		
+	    		<br />
+	    		<br />
 	    		<label for="description">Description</label>
 	    		<textarea th:field="*{description}"></textarea>
-	    		
-	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
+	    		<br />
+	    		<br />
+	    		<label for="categories">Issue Category</label>
+	    		<label for="categories">(please choose one)</label>
+	    		  <select>
+	    		    <option value="newFeature">New Feature Request</option>
+	    		    <option value="bug">Problem that needs fixed</option>
+	    		    <option value="morePlease">Please enhance this feature</option>
+	    		  </select>
+	    		<br />
+	    		<br />
+	    		<button type="submit" class="pure-button pure-button-primary">Save Issue</button>
 	    	</fieldset>
 	    </form>
 	</body>
