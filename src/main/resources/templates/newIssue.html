@@ -19,12 +19,11 @@
 	    		<textarea th:field="*{description}"></textarea>
 	    		<br />
 	    		<br />
-	    		<label for="categories">Issue Category</label>
-	    		<label for="categories">(please choose one)</label>
-	    		  <select>
-	    		    <option value="newFeature">New Feature Request</option>
-	    		    <option value="bug">Problem that needs fixed</option>
-	    		    <option value="morePlease">Please enhance this feature</option>
+	    		<label for="category">Issue Category</label>
+	    		  <select th:field="*{category}">
+	    		    <option value="New Feature">New Feature Request</option>
+	    		    <option value="Big Problem">Problem that needs fixed</option>
+	    		    <option value="Enhancement">Please enhance this feature</option>
 	    		  </select>
 	    		<br />
 	    		<br />
