@@ -1,28 +1,41 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-	    <title>Issue Tracker -- Login</title>
+	    <title>Issue Tracker -- Create New Issue</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+	    <link rel="stylesheet" href="/newIssue.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-	    <form th:object="${issueForm}" th:action="@{/issues/new}" action="#" method="post" class="pure-form pure-form-stacked">
+	    <form th:object="${issueForm}" th:action="@{/issues/new}" action="#" method="post" class="pure-form pure-form-aligned">
 	    	<fieldset>
-	    		<legend>New Issue</legend>
+	    		<legend>
+	    			<h1>New Issue</h1>
+	    		</legend>
 	    		
-	    		<label for="title">Title</label>
-	    		<input th:field="*{title}" type="text" placeholder="Title" />
+	    		<div class="pure-control-group">
+	    			<label for="title">Title</label>
+	    			<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>
+	    		</div>
 	    		
-	    		<label for="description">Description</label>
-	    		<textarea th:field="*{description}"></textarea>
+	    		<div class="pure-control-group">
+	    			<label for="description">Description</label>
+	    			<textarea th:field="*{description}" class="pure-input-rounded"></textarea>
+	    		</div>
 	    		
-	    		<label for="assignedTo">Assign To User</label>
-	    		<select th:field="*{assignedTo}">
-	    		    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
-	    		</select>
-	    		
+	    		<div class="pure-control-group">
+	   		 		<label for="assignedTo">Assign To User</label>
+	    			<select th:field="*{assignedTo}" class="pure-input-rounded">
+	    			    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
+	    			</select>
+	    		</div>
+	    		<div class="button">
 	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
+	    		</div>
 	    	</fieldset>
 	    </form>
+	    <script type="text/javascript" src="/newIssue.js"> </script>
 	</body>
 </html>

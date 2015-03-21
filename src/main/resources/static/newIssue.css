@@ -1,0 +1,40 @@
+body {
+	background-color: #6196E6;
+}
+
+h1 {
+	text-align: center;
+}
+
+.pure-control-group {
+	margin-left: auto;
+    margin-right: auto;
+	width: 30%;
+}
+
+.pure-input-rounded {
+	width: 200px;
+}
+
+.button {
+	text-align: center;
+	min-width: 125px;	
+}
+
+label {
+	font-weight: bold;
+}
+
+textarea {
+	resize: vertical;
+}
+
+/* colors I am using
+#87d2ff light blue
+#6196E6 blue
+#4d78b8 slightly darker blue
+#3a5a8a dark blue
+#1d2d45 navy blue
+
+not sure about the yellow
+#FFFF47 yellow */
