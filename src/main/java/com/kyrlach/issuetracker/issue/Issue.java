@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.kyrlach.issuetracker.login.User;
 
 @Entity
 public class Issue {
@@ -13,12 +16,15 @@ public class Issue {
     
     private String title;
     private String description;
+    @ManyToOne
+    private User assignedTo;
     
     public Issue() {}
     
-    public Issue(String title, String description) {
+    public Issue(String title, String description, User assignedTo) {
     	this.title = title;
     	this.description = description;
+    	this.assignedTo = assignedTo;
     }
 
 	public long getId() {
@@ -42,8 +48,17 @@ public class Issue {
 		this.description = description;
 	}
     
+	public User getAssignedTo() {
+		return assignedTo;
+	}
+
+	public void setAssignedTo(User assignedTo) {
+		this.assignedTo = assignedTo;
+	}
+	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+")";
+    	return "Issue("+id+","+title+","+description+","+assignedTo+")";
     }
+
 }

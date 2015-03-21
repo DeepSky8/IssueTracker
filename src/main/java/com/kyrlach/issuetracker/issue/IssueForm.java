@@ -3,6 +3,7 @@ package com.kyrlach.issuetracker.issue;
 public class IssueForm {
 	private String title;
 	private String description;
+	private int assignedTo;
 	
 	public String getTitle() {
 		return title;
@@ -16,6 +17,12 @@ public class IssueForm {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public int getAssignedTo() {
+		return assignedTo;
+	}
+	public void setAssignedTo(int assignedTo) {
+		this.assignedTo = assignedTo;
 	}
 	
 }

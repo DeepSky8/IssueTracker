@@ -16,6 +16,11 @@
 	    		<label for="description">Description</label>
 	    		<textarea th:field="*{description}"></textarea>
 	    		
+	    		<label for="assignedTo">Assign To User</label>
+	    		<select th:field="*{assignedTo}">
+	    		    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
+	    		</select>
+	    		
 	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
 	    	</fieldset>
 	    </form>
