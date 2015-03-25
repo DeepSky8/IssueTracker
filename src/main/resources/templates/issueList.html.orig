@@ -12,16 +12,22 @@
 				<tr>
 					<th>Title</th>
 					<th>Name</th>
-					<th>Difficulty</th>
+<<<<<<< HEAD
 					<th>Assigned To</th>
+=======
+					<th>Difficulty</th>
+>>>>>>> upstream/master
 				</tr>
 			</thead>
 			<tbody>
 			    <tr th:each="issue : ${issues}">
 			    	<td th:text="${issue.title}">My First Issue</td>
 			    	<td th:text="${issue.description}">This is _very_ important</td>
-			    	<td th:text="${issue.difficulty}">How hard is this?</td>
+<<<<<<< HEAD
 			    	<td th:text="${issue.assignedTo.username}">Who will be working on it</td>
+=======
+			    	<td th:text="${issue.difficulty}">How hard is this?</td>
+>>>>>>> upstream/master
 			    </tr>
 			</tbody>
 		</table>

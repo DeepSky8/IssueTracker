@@ -13,20 +13,29 @@ public class Issue {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
+    
     private String title;
     private String description;
-    private Number difficulty;
-    
+<<<<<<< HEAD
     @ManyToOne
     private User assignedTo;
     
     public Issue() {}
     
-    public Issue(String title, String description, Number difficulty, User assignedTo) {
+    public Issue(String title, String description, User assignedTo) {
+    	this.title = title;
+    	this.description = description;
+    	this.assignedTo = assignedTo;
+=======
+    private Number difficulty;
+    
+    public Issue() {}
+    
+    public Issue(String title, String description, Number difficulty) {
     	this.title = title;
     	this.description = description;
     	this.difficulty = difficulty;
-    	this.assignedTo = assignedTo;
+>>>>>>> upstream/master
     }
 
 	public long getId() {
@@ -49,24 +58,31 @@ public class Issue {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+<<<<<<< HEAD
+    
+	public User getAssignedTo() {
+		return assignedTo;
+	}
+
+	public void setAssignedTo(User assignedTo) {
+		this.assignedTo = assignedTo;
+=======
 
 	public Number getDifficulty() {
 		return difficulty;
 	}
 	public void setDifficulty(Number difficulty) {
 		this.difficulty = difficulty;
-	}
-	
-	public User getAssignedTo() {
-		return assignedTo;
-	}
-	public void setAssignedTo(User assignedTo) {
-		this.assignedTo = assignedTo;
+>>>>>>> upstream/master
 	}
 	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+","+difficulty+","+assignedTo+")";
+<<<<<<< HEAD
+    	return "Issue("+id+","+title+","+description+","+assignedTo+")";
+=======
+    	return "Issue("+id+","+title+","+description+","+difficulty+")";
+>>>>>>> upstream/master
     }
 
 }

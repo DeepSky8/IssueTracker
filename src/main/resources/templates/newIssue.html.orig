@@ -26,12 +26,15 @@
 	    			<textarea th:field="*{description}" class="pure-input-rounded"></textarea>
 	    		</div>
 	    		
+<<<<<<< HEAD
 	    		<div class="pure-control-group">
 	   		 		<label for="assignedTo">Assign To User</label>
 	    			<select th:field="*{assignedTo}" class="pure-input-rounded">
 	    			    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
 	    			</select>
 	    		</div>
+	    		<div class="button">
+=======
 	    		<label for="difficulty">Difficulty</label>
 	    		<input type="radio" name="difficulty" value="1" />1
 	    		<br />
@@ -55,7 +58,8 @@
 	    		<br />
 	    		<br />
 	    		<br />
-	    		<div class="button">
+	    		
+>>>>>>> upstream/master
 	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
 	    		</div>
 	    		</div>
