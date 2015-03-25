@@ -2,14 +2,35 @@ body {
 	background-color: #6196E6;
 }
 
+.container {
+	width: 200px;
+    padding: 25px;
+    border: 10px solid #1d2d45;
+    margin: 25px;
+	background-color: #87d2ff;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.pure-form legend {
+	background-color: #3a5a8a; 
+	border-bottom: 2px solid #FFFF47;
+}
+
 h1 {
 	text-align: center;
+	color: #ffff47;
+}
+
+.pure-form-aligned .pure-control-group label { 
+text-align: left;
 }
 
 .pure-control-group {
 	margin-left: auto;
     margin-right: auto;
-	width: 30%;
+	padding: 0px;
+	padding-left: 2px;
 }
 
 .pure-input-rounded {
@@ -31,10 +52,8 @@ textarea {
 
 /* colors I am using
 #87d2ff light blue
-#6196E6 blue
+#6196E6 blue -- main --
 #4d78b8 slightly darker blue
 #3a5a8a dark blue
 #1d2d45 navy blue
-
-not sure about the yellow
-#FFFF47 yellow */
+#FFFF47 yellow -- secondary -- */

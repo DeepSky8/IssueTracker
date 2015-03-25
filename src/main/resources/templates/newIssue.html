@@ -9,12 +9,13 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
+		
 	    <form th:object="${issueForm}" th:action="@{/issues/new}" action="#" method="post" class="pure-form pure-form-aligned">
 	    	<fieldset>
 	    		<legend>
 	    			<h1>New Issue</h1>
 	    		</legend>
-	    		
+	    		<div class="container">
 	    		<div class="pure-control-group">
 	    			<label for="title">Title</label>
 	    			<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>
@@ -33,6 +34,7 @@
 	    		</div>
 	    		<div class="button">
 	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
+	    		</div>
 	    		</div>
 	    	</fieldset>
 	    </form>
