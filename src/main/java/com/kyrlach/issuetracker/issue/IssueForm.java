@@ -3,7 +3,7 @@ package com.kyrlach.issuetracker.issue;
 public class IssueForm {
 	private String title;
 	private String description;
-	private int difficulty;
+	private float difficulty;
 	private int assignedTo;
 
 	public IssueForm () {
@@ -30,10 +30,10 @@ public class IssueForm {
 		this.assignedTo = assignedTo;
 	}
 
-	public int getDifficulty() {
+	public float getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(int difficulty) {
+	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
 	}
 	

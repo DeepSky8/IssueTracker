@@ -27,34 +27,28 @@
 	    		</div>
 	    		
 	    		<div class="pure-control-group">
+	    		<label for="difficulty">Difficulty</label>
+	    			<select th:field="*{difficulty}" class="pure-input-rounded">
+	    				<option value="0">0</option>
+	    				<option value=".5">1/2</option>
+	    				<option value="1">1</option>
+	    				<option value="2">2</option>
+	    				<option value="3">3</option>
+	    				<option value="5">5</option>
+	    				<option value="8">8</option>
+	    				<option value="13">13</option>
+	    				<option value="20">20</option>
+	    				<option value="40">40</option>
+	    				<option value="100">100</option>
+	    			</select>
+	    		</div>
+	    		
+	    		<div class="pure-control-group">
 	   		 		<label for="assignedTo">Assign To User</label>
 	    			<select th:field="*{assignedTo}" class="pure-input-rounded">
 	    			    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
 	    			</select>
 	    		</div>
-	    		<label for="difficulty">Difficulty</label>
-	    		<input type="radio" name="difficulty" value="1" />1
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="5" />5
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="9" />9
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="15" />15
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="20" />20
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="27" />27
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="35" />35
-	    		<br />
-	    		<br />
-	    		<br />
 	    		<div class="button">
 	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
 	    		</div>

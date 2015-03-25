@@ -15,14 +15,14 @@ public class Issue {
     private long id;
     private String title;
     private String description;
-    private Number difficulty;
+    private float difficulty;
     
     @ManyToOne
     private User assignedTo;
     
     public Issue() {}
     
-    public Issue(String title, String description, Number difficulty, User assignedTo) {
+    public Issue(String title, String description, float difficulty, User assignedTo) {
     	this.title = title;
     	this.description = description;
     	this.difficulty = difficulty;
@@ -50,10 +50,10 @@ public class Issue {
 		this.description = description;
 	}
 
-	public Number getDifficulty() {
+	public float getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(Number difficulty) {
+	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
 	}
 	
