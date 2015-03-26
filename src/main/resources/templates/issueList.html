@@ -13,6 +13,7 @@
 					<th>Title</th>
 					<th>Name</th>
 					<th>Category</th>
+					<th>Difficulty</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -20,6 +21,7 @@
 			    	<td th:text="${issue.title}">My First Issue</td>
 			    	<td th:text="${issue.description}">This is _very_ important</td>
 			    	<td th:text="${issue.category}">Type of problem</td>
+			    	<td th:text="${issue.difficulty}">How hard is this?</td>
 			    </tr>
 			</tbody>
 		</table>
