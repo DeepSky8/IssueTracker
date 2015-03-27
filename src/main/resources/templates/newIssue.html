@@ -18,14 +18,20 @@
 	    		<div class="container">
 	    		<div class="pure-control-group">
 	    			<label for="title">Title</label>
-	    			<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>
+	    			<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>	    		</div>
 	    		</div>
-	    		
 	    		<div class="pure-control-group">
 	    			<label for="description">Description</label>
 	    			<textarea th:field="*{description}" class="pure-input-rounded"></textarea>
 	    		</div>
-	    		
+	    		<div class="pure-control-group">
+	    		<label for="category">Issue Category</label>
+	    		  <select th:field="*{category}">
+	    		    <option value="New Feature">New Feature Request</option>
+	    		    <option value="Big Problem">Problem that needs fixed</option>
+	    		    <option value="Enhancement">Please enhance this feature</option>
+	    		  </select>
+	    		</div>
 	    		<div class="pure-control-group">
 	    		<label for="difficulty">Difficulty</label>
 	    			<select th:field="*{difficulty}" class="pure-input-rounded">

@@ -12,6 +12,7 @@
 				<tr>
 					<th>Title</th>
 					<th>Name</th>
+					<th>Category</th>
 					<th>Difficulty</th>
 					<th>Assigned To</th>
 				</tr>
@@ -20,6 +21,7 @@
 			    <tr th:each="issue : ${issues}">
 			    	<td th:text="${issue.title}">My First Issue</td>
 			    	<td th:text="${issue.description}">This is _very_ important</td>
+			    	<td th:text="${issue.category}">Type of problem</td>
 			    	<td th:text="${issue.difficulty}">How hard is this?</td>
 			    	<td th:text="${issue.assignedTo.username}">Who will be working on it</td>
 			    </tr>

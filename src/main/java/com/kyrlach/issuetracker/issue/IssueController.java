@@ -36,7 +36,7 @@ public class IssueController {
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public String saveIssue(@ModelAttribute IssueForm issueForm, Model model) {
 		User assignee = userRepository.findOne(issueForm.getAssignedTo());
-		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getDifficulty(), assignee);
+		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getCategory(), issueForm.getDifficulty(), assignee);
 		issueRepository.save(newIssue);
 		return "redirect:/issues";
 	}

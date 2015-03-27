@@ -15,16 +15,17 @@ public class Issue {
     private long id;
     private String title;
     private String description;
+    private String category;
     private float difficulty;
-    
     @ManyToOne
     private User assignedTo;
     
-    public Issue() {}
+	public Issue() {}
     
-    public Issue(String title, String description, float difficulty, User assignedTo) {
+    public Issue(String title, String description, String category, float difficulty, User assignedTo) {
     	this.title = title;
     	this.description = description;
+    	this.category= category;
     	this.difficulty = difficulty;
     	this.assignedTo = assignedTo;
     }
@@ -50,8 +51,16 @@ public class Issue {
 		this.description = description;
 	}
 
+    public String getCategory() {
+		return category;
+    }
+        
 	public float getDifficulty() {
 		return difficulty;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
@@ -66,7 +75,7 @@ public class Issue {
 	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+","+difficulty+","+assignedTo+")";
+    	return "Issue("+id+","+title+","+description+","+category+","+difficulty+","+assignedTo+")";
     }
 
 }

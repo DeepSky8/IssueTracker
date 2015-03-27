@@ -3,10 +3,12 @@ package com.kyrlach.issuetracker.issue;
 public class IssueForm {
 	private String title;
 	private String description;
+	private String category;
 	private float difficulty;
 	private int assignedTo;
 
 	public IssueForm () {
+		this.category = null;
 		this.difficulty = 1;
 	}
 	
@@ -28,6 +30,13 @@ public class IssueForm {
 	}
 	public void setAssignedTo(int assignedTo) {
 		this.assignedTo = assignedTo;
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public float getDifficulty() {
