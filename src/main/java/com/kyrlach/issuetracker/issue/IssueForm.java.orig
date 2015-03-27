@@ -4,16 +4,21 @@ public class IssueForm {
 	private String title;
 	private String description;
 <<<<<<< HEAD
+	private float difficulty;
 	private int assignedTo;
+
+	public IssueForm () {
 =======
-	private Number difficulty;
+	private String category;
+	private Integer difficulty;
 
 	public IssueForm () {
 		this.title = null;
 		this.description = null;
+		this.category = null;
+>>>>>>> upstream/master
 		this.difficulty = 1;
 	}
->>>>>>> upstream/master
 	
 	public String getTitle() {
 		return title;
@@ -34,14 +39,27 @@ public class IssueForm {
 	}
 	public void setAssignedTo(int assignedTo) {
 		this.assignedTo = assignedTo;
-=======
+	}
 
-	public Number getDifficulty() {
+	public float getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(Number difficulty) {
-		this.difficulty = difficulty;
+	public void setDifficulty(float difficulty) {
+=======
+	
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Integer getDifficulty() {
+		return difficulty;
+	}
+	public void setDifficulty(Integer difficulty) {
 >>>>>>> upstream/master
+		this.difficulty = difficulty;
 	}
 	
 

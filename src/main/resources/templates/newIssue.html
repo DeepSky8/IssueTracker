@@ -16,48 +16,47 @@
 	    			<h1>New Issue</h1>
 	    		</legend>
 	    		<div class="container">
-	    		<div class="pure-control-group">
-	    			<label for="title">Title</label>
-	    			<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>	    		</div>
-	    		</div>
-	    		<div class="pure-control-group">
-	    			<label for="description">Description</label>
-	    			<textarea th:field="*{description}" class="pure-input-rounded"></textarea>
-	    		</div>
-	    		<div class="pure-control-group">
-	    		<label for="category">Issue Category</label>
-	    		  <select th:field="*{category}">
-	    		    <option value="New Feature">New Feature Request</option>
-	    		    <option value="Big Problem">Problem that needs fixed</option>
-	    		    <option value="Enhancement">Please enhance this feature</option>
-	    		  </select>
-	    		</div>
-	    		<div class="pure-control-group">
-	    		<label for="difficulty">Difficulty</label>
-	    			<select th:field="*{difficulty}" class="pure-input-rounded">
-	    				<option value="0">0</option>
-	    				<option value=".5">1/2</option>
-	    				<option value="1">1</option>
-	    				<option value="2">2</option>
-	    				<option value="3">3</option>
-	    				<option value="5">5</option>
-	    				<option value="8">8</option>
-	    				<option value="13">13</option>
-	    				<option value="20">20</option>
-	    				<option value="40">40</option>
-	    				<option value="100">100</option>
-	    			</select>
-	    		</div>
-	    		
-	    		<div class="pure-control-group">
-	   		 		<label for="assignedTo">Assign To User</label>
-	    			<select th:field="*{assignedTo}" class="pure-input-rounded">
-	    			    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
-	    			</select>
-	    		</div>
-	    		<div class="button">
-	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
-	    		</div>
+					<div class="pure-control-group">
+						<label for="title">Title</label>
+						<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>	
+						</div>
+					<div class="pure-control-group">
+						<label for="description">Description</label>
+						<textarea th:field="*{description}" class="pure-input-rounded"></textarea>
+					</div>
+					<div class="pure-control-group">
+						<label for="category">Issue Category</label>
+						<select th:field="*{category}" class="pure-input-rounded">
+							<option value="New Feature">New Feature Request</option>
+							<option value="Big Problem">Problem that needs fixed</option>
+							<option value="Enhancement">Please enhance this feature</option>
+						</select>
+					</div>
+					<div class="pure-control-group">
+						<label for="difficulty">Difficulty</label>
+						<select th:field="*{difficulty}" class="pure-input-rounded">
+							<option value="0">0</option>
+							<option value=".5">1/2</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="5">5</option>
+							<option value="8">8</option>
+							<option value="13">13</option>
+							<option value="20">20</option>
+							<option value="40">40</option>
+							<option value="100">100</option>
+						</select>
+					</div>
+					<div class="pure-control-group">
+						<label for="assignedTo">Assign To User</label>
+						<select th:field="*{assignedTo}" class="pure-input-rounded">
+							<option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
+						</select>
+					</div>
+					<div class="button">
+						<button type="submit" class="pure-button pure-button-primary">Create</button>
+					</div>
 	    		</div>
 	    	</fieldset>
 	    </form>

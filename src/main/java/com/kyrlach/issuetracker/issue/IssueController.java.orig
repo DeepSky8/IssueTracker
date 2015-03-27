@@ -37,9 +37,9 @@ public class IssueController {
 	public String saveIssue(@ModelAttribute IssueForm issueForm, Model model) {
 <<<<<<< HEAD
 		User assignee = userRepository.findOne(issueForm.getAssignedTo());
-		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), assignee);
+		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getDifficulty(), assignee);
 =======
-		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getDifficulty());
+		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getCategory(), issueForm.getDifficulty());
 >>>>>>> upstream/master
 		issueRepository.save(newIssue);
 		return "redirect:/issues";
