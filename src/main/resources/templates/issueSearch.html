@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Issue Tracker -- Search</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+	</head>
+    <form th:object="${searchTerms}" th:action="@{/issues/search}" action="#" method="post">
+	  <body>
+		<table class="pure-table pure-table-striped">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Difficulty</th>
+				</tr>
+			</thead>
+			<tbody>
+			    <tr>
+			        <label for="findByTitleLike">Title</label>
+			    	<textarea th:field="*{title}">Search Title</textarea>
+			    	<label for="findByDescriptionLike">Description</label>
+			    	<textarea th:field="*{description}">Search Description</textarea>
+			    	<label for="findByCategoryLike">Category</label>
+			    	<textarea th:field="*{category}">Search Category</textarea>
+			    	<label for="listDifficultiesIn">Difficulties</label>
+			    	<input type="checkbox" th:field="*{difficulties}" value="1" />1
+			    	<input type="checkbox" th:field="*{difficulties}" value="5" />5
+			    	<input type="checkbox" th:field="*{difficulties}" value="9" />9
+			    	<input type="checkbox" th:field="*{difficulties}" value="15" />15
+			    	<input type="checkbox" th:field="*{difficulties}" value="20" />20
+			    	<input type="checkbox" th:field="*{difficulties}" value="27" />27
+			    	<input type="checkbox" th:field="*{difficulties}" value="35" />35
+			    </tr>
+			</tbody>
+		</table>
+		<button type="submit" class="pure-button pure-button-primary">Search</button>
+	  </body>
+    </form>
+</html>
