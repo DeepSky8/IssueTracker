@@ -52,7 +52,7 @@ public class IssueController {
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public String submittedData(@ModelAttribute IssueSearchForm searchTerms, Model model)	{
 		logger.info(searchTerms);
-		List<Issue> searchResults = issueRepository.findByTitleLikeAndDifficultyIn(searchTerms.getTitle(), searchTerms.getDifficulties());
+		List<Issue> searchResults = issueRepository.findByTitleLikeAndDifficultyIn("%" + searchTerms.getTitle() + "%", searchTerms.getDifficulties());
 		logger.info(searchResults);
 		model.addAttribute("issues", searchResults);
 		return "issueList";	
