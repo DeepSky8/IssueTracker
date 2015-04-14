@@ -22,16 +22,21 @@
 			    	<textarea th:field="*{title}">Search Title</textarea>
 			    	<label for="findByDescriptionLike">Description</label>
 			    	<textarea th:field="*{description}">Search Description</textarea>
-			    	<label for="findByCategoryLike">Category</label>
-			    	<textarea th:field="*{category}">Search Category</textarea>
+			    	<label for="category">Issue Category</label>
+	    		    <select th:field="*{category}" name="Category">
+	    		      <option value="">Search all categories</option>
+	    		      <option value="New Feature">New Feature Requests</option>
+	    		      <option value="Big Problem">Problems</option>
+	    		      <option value="Enhancement">Enhancements</option>
+	    		    </select>
 			    	<label for="listDifficultiesIn">Difficulties</label>
-			    	<input type="checkbox" th:field="*{difficulties}" value="1" />1
-			    	<input type="checkbox" th:field="*{difficulties}" value="5" />5
-			    	<input type="checkbox" th:field="*{difficulties}" value="9" />9
-			    	<input type="checkbox" th:field="*{difficulties}" value="15" />15
-			    	<input type="checkbox" th:field="*{difficulties}" value="20" />20
-			    	<input type="checkbox" th:field="*{difficulties}" value="27" />27
-			    	<input type="checkbox" th:field="*{difficulties}" value="35" />35
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="1" />1
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="5"  />5
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="9" />9
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="15" />15
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="20" />20
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="27" />27
+			    	<input type="checkbox" th:field="*{difficulties}" th:value="35" />35
 			    </tr>
 			</tbody>
 		</table>
