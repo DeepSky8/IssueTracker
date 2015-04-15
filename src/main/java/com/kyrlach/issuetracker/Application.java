@@ -29,8 +29,8 @@ public class Application implements CommandLineRunner {
 		userRepository.save(new User("Tom", "Test"));
 		userRepository.save(new User("Ben", "Secr3t"));
 		userRepository.save(new User("Joel", "1234"));
-		issueRepository.save(new Issue("Purple", "doesn't work", "bug", 5));
-		issueRepository.save(new Issue("Blue", "too much work", "spider", 9));
-		issueRepository.save(new Issue("Green", "need more", "frog", 1));
+		issueRepository.save(new Issue("Purple", "doesn't work", "Feature", 5));
+		issueRepository.save(new Issue("Blue", "too much work", "Problem", 9));
+		issueRepository.save(new Issue("Green", "need more", "Enhancement", 1));
 	}
 }

@@ -6,13 +6,13 @@ import java.util.List;
 public class IssueSearchForm {
 	private String title;
 	private String description;
-	private String category;
+	private List<String> categories;
 	private List<Integer> difficulties;
 	
 	public IssueSearchForm () {
 		this.title = null;
 		this.description = null;
-		this.category = null;
+		this.categories = new ArrayList<String>();
 		this.difficulties = new ArrayList<Integer>();
 		this.difficulties.add(1);
 		this.difficulties.add(5);
@@ -39,12 +39,12 @@ public class IssueSearchForm {
 		this.description = description;
 	}
 
-	public String getCategory() {
-		return category;
+	public List<String> getCategories() {
+		return categories;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategories(List<String> categories) {
+		this.categories = categories;
 	}
 
 	public List<Integer> getDifficulties() {
@@ -58,6 +58,6 @@ public class IssueSearchForm {
 
 	@Override
     public String toString() {
-    	return "IssueSearchForm("+title+","+description+","+category+","+difficulties+")";
+    	return "IssueSearchForm("+title+","+description+","+categories+","+difficulties+")";
 	}
 }
