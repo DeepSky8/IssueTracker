@@ -14,13 +14,6 @@ public class IssueSearchForm {
 		this.description = null;
 		this.categories = new ArrayList<String>();
 		this.difficulties = new ArrayList<Integer>();
-		this.difficulties.add(1);
-		this.difficulties.add(5);
-		this.difficulties.add(9);
-		this.difficulties.add(15);
-		this.difficulties.add(20);
-		this.difficulties.add(27);
-		this.difficulties.add(35);
 		}
 	
 	public String getTitle() {

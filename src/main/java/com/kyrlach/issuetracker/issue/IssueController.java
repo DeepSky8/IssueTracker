@@ -52,9 +52,31 @@ public class IssueController {
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public String submittedData(@ModelAttribute IssueSearchForm searchTerms, Model model)	{
 		logger.info(searchTerms);
-		List<Issue> searchResults = issueRepository.findByTitleLikeAndDescriptionLikeAndCategoryInAndDifficultyIn("%" + searchTerms.getTitle() + "%", "%" + searchTerms.getDescription() + "%", searchTerms.getCategories(), searchTerms.getDifficulties());
-		logger.info(searchResults);
+		List<String> categoriesA = searchTerms.getCategories();
+		logger.info(categoriesA);
+		if (categoriesA == null){
+			categoriesA = new ArrayList<String>();
+		    categoriesA.add("Feature");
+		    categoriesA.add("Problem");
+		    categoriesA.add("Enhancement");
+		}
+		List<Integer> difficultiesB = searchTerms.getDifficulties();
+		logger.info(difficultiesB);
+		if(difficultiesB == null) {
+		  difficultiesB = new ArrayList<Integer>();
+		  difficultiesB.add(1);
+		  difficultiesB.add(5);
+		  difficultiesB.add(9);
+		  difficultiesB.add(15);
+		  difficultiesB.add(20);
+		  difficultiesB.add(27);
+		  difficultiesB.add(35);
+		 }		
+		logger.info(categoriesA);
+		logger.info(difficultiesB);
+		List<Issue> searchResults = issueRepository.findByTitleLikeAndDescriptionLikeAndCategoryInAndDifficultyIn("%" + searchTerms.getTitle() + "%","%" + searchTerms.getDescription() + "%", categoriesA, difficultiesB);
 		model.addAttribute("issues", searchResults);
+		logger.info(searchResults);
 		return "issueList";	
 	}
 
