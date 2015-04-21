@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.kyrlach.issuetracker.login.User;
 
 @Entity
 public class Issue {
@@ -15,13 +18,16 @@ public class Issue {
     private String description;
     private String category;
     private Integer difficulty;
+    @ManyToOne
+    private User assignedTo;
     
 	public Issue() {}
     
-    public Issue(String title, String description, String category, Integer difficulty) {
+    public Issue(String title, String description, String category, Integer difficulty, User assignedTo) {
     	this.title = title;
     	this.description = description;
     	this.category= category;
+    	this.assignedTo = assignedTo;
     	this.difficulty = difficulty;
     }
 
@@ -52,8 +58,13 @@ public class Issue {
         
 	public Number getDifficulty() {
 		return difficulty;
+	public User getAssignedTo() {
+		return assignedTo;
 	}
 
+	public void setAssignedTo(User assignedTo) {
+		this.assignedTo = assignedTo;
+	}
 	public void setCategory(String category) {
 		this.category = category;
 	}
@@ -66,6 +77,7 @@ public class Issue {
 	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+","+category+","+difficulty+")";
+    	return "Issue("+id+","+title+","+description+","+category+","+difficulty+","+assignedTo+")";
     }
+
 }

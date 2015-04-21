@@ -4,6 +4,7 @@ public class IssueForm {
 	private String title;
 	private String description;
 	private String category;
+	private int assignedTo;
 	private Integer difficulty;
 
 	public IssueForm () {
@@ -25,6 +26,12 @@ public class IssueForm {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public int getAssignedTo() {
+		return assignedTo;
+	}
+	public void setAssignedTo(int assignedTo) {
+		this.assignedTo = assignedTo;
 	}
 	
 	public String getCategory() {
