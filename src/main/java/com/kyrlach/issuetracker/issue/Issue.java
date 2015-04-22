@@ -26,8 +26,8 @@ public class Issue {
     	this.title = title;
     	this.description = description;
     	this.category= category;
-    	this.difficulty = difficulty;
     	this.assignedTo = assignedTo;
+    	this.difficulty = difficulty;
     }
 
 	public long getId() {
@@ -57,8 +57,13 @@ public class Issue {
         
 	public float getDifficulty() {
 		return difficulty;
+	public User getAssignedTo() {
+		return assignedTo;
 	}
 
+	public void setAssignedTo(User assignedTo) {
+		this.assignedTo = assignedTo;
+	}
 	public void setCategory(String category) {
 		this.category = category;
 	}
