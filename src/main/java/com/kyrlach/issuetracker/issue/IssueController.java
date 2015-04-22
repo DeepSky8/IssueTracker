@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.kyrlach.issuetracker.login.LoginController;
 import com.kyrlach.issuetracker.login.LoginForm;
 import com.kyrlach.issuetracker.login.User;
+import com.kyrlach.issuetracker.login.User;
+import com.kyrlach.issuetracker.login.UserRepository;
+
 
 @Controller
 @RequestMapping("/issues")
@@ -24,6 +27,9 @@ public class IssueController {
 	@Autowired
 	private IssueRepository issueRepository;
 	
+	@Autowired
+	private UserRepository userRepository;
+	
 	@RequestMapping(method = RequestMethod.GET)
     public String issues(Model model) {
     	model.addAttribute("issues", issueRepository.findAll());
@@ -32,13 +38,15 @@ public class IssueController {
 	
 	@RequestMapping(value = "/new", method = RequestMethod.GET) 
 	public String newIssue(Model model) {
+		model.addAttribute("userList", userRepository.findAll());
 		model.addAttribute("issueForm", new IssueForm());
 		return "newIssue";
 	}
 	
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public String saveIssue(@ModelAttribute IssueForm issueForm, Model model) {
-		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getCategory(), issueForm.getDifficulty());
+		User assignee = userRepository.findOne(issueForm.getAssignedTo());
+		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getCategory(), issueForm.getDifficulty(),assignee);
 		issueRepository.save(newIssue);
 		return "redirect:/issues";
 	}
