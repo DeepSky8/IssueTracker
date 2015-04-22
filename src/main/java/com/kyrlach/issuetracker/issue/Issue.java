@@ -16,13 +16,13 @@ public class Issue {
     private String title;
     private String description;
     private String category;
-    private Integer difficulty;
+    private float difficulty;
     @ManyToOne
     private User assignedTo;
     
 	public Issue() {}
     
-    public Issue(String title, String description, String category, Integer difficulty, User assignedTo) {
+    public Issue(String title, String description, String category, float difficulty, User assignedTo) {
     	this.title = title;
     	this.description = description;
     	this.category= category;
@@ -55,7 +55,7 @@ public class Issue {
 		return category;
     }
         
-	public Number getDifficulty() {
+	public float getDifficulty() {
 		return difficulty;
 	public User getAssignedTo() {
 		return assignedTo;
@@ -67,12 +67,16 @@ public class Issue {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public void setDifficulty(Integer difficulty) {
+	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
 	}
 	
-
-	
+	public User getAssignedTo() {
+		return assignedTo;
+	}
+	public void setAssignedTo(User assignedTo) {
+		this.assignedTo = assignedTo;
+	}
 	
 	@Override
     public String toString() {

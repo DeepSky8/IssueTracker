@@ -4,12 +4,10 @@ public class IssueForm {
 	private String title;
 	private String description;
 	private String category;
+	private float difficulty;
 	private int assignedTo;
-	private Integer difficulty;
 
 	public IssueForm () {
-		this.title = null;
-		this.description = null;
 		this.category = null;
 		this.difficulty = 1;
 	}
@@ -41,10 +39,10 @@ public class IssueForm {
 		this.category = category;
 	}
 
-	public Integer getDifficulty() {
+	public float getDifficulty() {
 		return difficulty;
 	}
-	public void setDifficulty(Integer difficulty) {
+	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
 	}
 	
