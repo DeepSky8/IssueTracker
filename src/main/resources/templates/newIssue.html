@@ -1,62 +1,65 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-	    <title>Issue Tracker -- Login</title>
+	    <title>Issue Tracker -- Create New Issue</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+	    <link rel="stylesheet" href="/newIssue.css" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1" />
 	</head>
 	<body>
-	    <form th:object="${issueForm}" th:action="@{/issues/new}" action="#" method="post" class="pure-form pure-form-stacked">
+		
+	    <form th:object="${issueForm}" th:action="@{/issues/new}" action="#" method="post" class="pure-form pure-form-aligned">
 	    	<fieldset>
-	    		<legend>New Issue</legend>
-	    		<br />
-	    		<br />
-	    		<label for="title">Title</label>
-	    		<input th:field="*{title}" type="text" placeholder="Title" />
-	    		<br />
-	    		<br />
-	    		<label for="description">Description</label>
-	    		<textarea th:field="*{description}"></textarea>
-	    		<br />
-	    		<br />
-	    		<label for="category">Issue Category</label>
-	    		  <select th:field="*{category}">
-	    		    <option value="New Feature">New Feature Request</option>
-	    		    <option value="Big Problem">Problem that needs fixed</option>
-	    		    <option value="Enhancement">Please enhance this feature</option>
-	    		  </select>
-	    		<br />
-	    		<label for="difficulty">Difficulty</label>
-	    		<input type="radio" name="difficulty" value="1" />1
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="5" />5
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="9" />9
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="15" />15
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="20" />20
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="27" />27
-	    		<br />
-	    		<br />
-	    		<input type="radio" name="difficulty" value="35" />35
-	    		<br />
-	    		<br />
-	    		<br />
-	    		
-	    		<label for="assignedTo">Assign To User</label>
-	    		<select th:field="*{assignedTo}">
-	    		    <option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
-	    		</select>
-	    		
-	    		<button type="submit" class="pure-button pure-button-primary">Create</button>
+	    		<legend>
+	    			<h1>New Issue</h1>
+	    		</legend>
+	    		<div class="container">
+					<div class="pure-control-group">
+						<label for="title">Title</label>
+						<input th:field="*{title}" type="text" placeholder="Title" class="pure-input-rounded"/>	
+						</div>
+					<div class="pure-control-group">
+						<label for="description">Description</label>
+						<textarea th:field="*{description}" class="pure-input-rounded"></textarea>
+					</div>
+					<div class="pure-control-group">
+						<label for="category">Issue Category</label>
+						<select th:field="*{category}" class="pure-input-rounded">
+							<option value="New Feature">New Feature Request</option>
+							<option value="Big Problem">Problem that needs fixed</option>
+							<option value="Enhancement">Please enhance this feature</option>
+						</select>
+					</div>
+					<div class="pure-control-group">
+						<label for="difficulty">Difficulty</label>
+						<select th:field="*{difficulty}" class="pure-input-rounded">
+							<option value="0">0</option>
+							<option value=".5">1/2</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="5">5</option>
+							<option value="8">8</option>
+							<option value="13">13</option>
+							<option value="20">20</option>
+							<option value="40">40</option>
+							<option value="100">100</option>
+						</select>
+					</div>
+					<div class="pure-control-group">
+						<label for="assignedTo">Assign To User</label>
+						<select th:field="*{assignedTo}" class="pure-input-rounded">
+							<option th:each="user : ${userList}" th:text="${user.username}" th:value="${user.id}">Bob the builder</option>
+						</select>
+					</div>
+					<div class="button">
+						<button type="submit" class="pure-button pure-button-primary">Create</button>
+					</div>
+	    		</div>
 	    	</fieldset>
 	    </form>
+	    <script type="text/javascript" src="/newIssue.js"> </script>
 	</body>
 </html>
