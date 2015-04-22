@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface IssueRepository extends CrudRepository<Issue, Long> {
 		
-	List<Issue> findByTitleLikeAndDescriptionLikeAndCategoryInAndDifficultyIn(String title, String description, List<String> categories, List<Integer> difficulties);
+	List<Issue> findByTitleLikeAndDescriptionLikeAndCategoryInAndDifficultyIn(String title, String description, List<String> categories, List<Float> difficulties);
 
 }

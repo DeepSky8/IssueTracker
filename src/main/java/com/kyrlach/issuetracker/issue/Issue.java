@@ -57,16 +57,8 @@ public class Issue {
         
 	public float getDifficulty() {
 		return difficulty;
-	public User getAssignedTo() {
-		return assignedTo;
 	}
-
-	public void setAssignedTo(User assignedTo) {
-		this.assignedTo = assignedTo;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
+	
 	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
 	}
@@ -74,8 +66,13 @@ public class Issue {
 	public User getAssignedTo() {
 		return assignedTo;
 	}
+
 	public void setAssignedTo(User assignedTo) {
 		this.assignedTo = assignedTo;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	@Override

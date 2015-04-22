@@ -26,11 +26,14 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... arg0) throws Exception {
 
-		userRepository.save(new User("Tom", "Test"));
-		userRepository.save(new User("Ben", "Secr3t"));
-		userRepository.save(new User("Joel", "1234"));
-		issueRepository.save(new Issue("Purple", "doesn't work", "Feature", 5));
-		issueRepository.save(new Issue("Blue", "too much work", "Problem", 9));
-		issueRepository.save(new Issue("Green", "need more", "Enhancement", 1));
+		User tom = new User("Tom", "Test");
+		User ben = new User("Ben", "Secr3t");
+		User joel = new User("Joel", "1234");
+		userRepository.save(tom);
+		userRepository.save(ben);
+		userRepository.save(joel);
+		issueRepository.save(new Issue("Purple", "doesn't work", "Feature", 2, tom));
+		issueRepository.save(new Issue("Blue", "too much work", "Problem", 40, ben));
+		issueRepository.save(new Issue("Green", "need more", "Enhancement", 5, joel));
 	}
 }

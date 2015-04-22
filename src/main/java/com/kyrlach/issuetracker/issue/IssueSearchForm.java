@@ -7,13 +7,13 @@ public class IssueSearchForm {
 	private String title;
 	private String description;
 	private List<String> categories;
-	private List<Integer> difficulties;
+	private List<Float> difficulties;
 	
 	public IssueSearchForm () {
 		this.title = null;
 		this.description = null;
 		this.categories = new ArrayList<String>();
-		this.difficulties = new ArrayList<Integer>();
+		this.difficulties = new ArrayList<Float>();
 		}
 	
 	public String getTitle() {
@@ -40,11 +40,11 @@ public class IssueSearchForm {
 		this.categories = categories;
 	}
 
-	public List<Integer> getDifficulties() {
+	public List<Float> getDifficulties() {
 		return difficulties;
 	}
 
-	public void setDifficulties(List<Integer> difficulties) {
+	public void setDifficulties(List<Float> difficulties) {
 		this.difficulties = difficulties;
 	}
 	

@@ -68,17 +68,21 @@ public class IssueController {
 		    categoriesA.add("Problem");
 		    categoriesA.add("Enhancement");
 		}
-		List<Integer> difficultiesB = searchTerms.getDifficulties();
+		List<Float> difficultiesB = searchTerms.getDifficulties();
 		logger.info(difficultiesB);
 		if(difficultiesB == null) {
-		  difficultiesB = new ArrayList<Integer>();
-		  difficultiesB.add(1);
-		  difficultiesB.add(5);
-		  difficultiesB.add(9);
-		  difficultiesB.add(15);
-		  difficultiesB.add(20);
-		  difficultiesB.add(27);
-		  difficultiesB.add(35);
+		  difficultiesB = new ArrayList<Float>();
+		  difficultiesB.add(0f);
+		  difficultiesB.add(0.5f);
+		  difficultiesB.add(1f);
+		  difficultiesB.add(2f);
+		  difficultiesB.add(3f);
+		  difficultiesB.add(5f);
+		  difficultiesB.add(8f);
+		  difficultiesB.add(13f);
+		  difficultiesB.add(20f);
+		  difficultiesB.add(40f);
+		  difficultiesB.add(100f);
 		 }		
 		logger.info(categoriesA);
 		logger.info(difficultiesB);
