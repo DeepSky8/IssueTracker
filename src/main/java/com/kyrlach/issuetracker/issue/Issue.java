@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.kyrlach.issuetracker.login.User;
+import com.kyrlach.issuetracker.issue.Stage;
+
 
 @Entity
 public class Issue {
@@ -17,18 +19,37 @@ public class Issue {
     private String description;
     private String category;
     private float difficulty;
+	private Stage stage;
     @ManyToOne
     private User assignedTo;
+
     
 	public Issue() {}
     
-    public Issue(String title, String description, String category, float difficulty, User assignedTo) {
+    public Issue(String title, String description, String category, float difficulty, User assignedTo, Stage stage) {
     	this.title = title;
     	this.description = description;
     	this.category= category;
     	this.assignedTo = assignedTo;
     	this.difficulty = difficulty;
+    	this.stage = stage;
+    	}
+    
+    public Stage getStage() {
+		return stage;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
+
+    public class Process {
+    	Stage stage;
     }
+    
+      public void Process(Stage stage) {
+    	  this.stage = stage;
+      }
 
 	public long getId() {
 		return id;
@@ -77,7 +98,7 @@ public class Issue {
 	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+","+category+","+difficulty+","+assignedTo+")";
+    	return "Issue("+id+","+title+","+description+","+category+","+difficulty+","+assignedTo+","+stage+")";
     }
 
 }

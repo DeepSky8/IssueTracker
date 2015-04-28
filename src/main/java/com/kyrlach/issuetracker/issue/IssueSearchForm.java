@@ -2,20 +2,32 @@ package com.kyrlach.issuetracker.issue;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.kyrlach.issuetracker.issue.Stage;
+
 
 public class IssueSearchForm {
 	private String title;
 	private String description;
 	private List<String> categories;
 	private List<Float> difficulties;
+	private List<Stage> stage;
 	
 	public IssueSearchForm () {
 		this.title = null;
 		this.description = null;
 		this.categories = new ArrayList<String>();
 		this.difficulties = new ArrayList<Float>();
+		this.stage = new ArrayList<Stage>();
 		}
 	
+	public List<Stage> getStage() {
+		return stage;
+	}
+
+	public void setStage(List<Stage> stage) {
+		this.stage = stage;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -51,6 +63,6 @@ public class IssueSearchForm {
 
 	@Override
     public String toString() {
-    	return "IssueSearchForm("+title+","+description+","+categories+","+difficulties+")";
+    	return "IssueSearchForm("+title+","+description+","+categories+","+difficulties+","+stage+")";
 	}
 }

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.kyrlach.issuetracker.login.LoginController;
 import com.kyrlach.issuetracker.login.LoginForm;
 import com.kyrlach.issuetracker.login.User;
-import com.kyrlach.issuetracker.login.User;
 import com.kyrlach.issuetracker.login.UserRepository;
+import com.kyrlach.issuetracker.issue.Stage;
 
 
 @Controller
@@ -46,7 +46,7 @@ public class IssueController {
 	@RequestMapping(value = "/new", method = RequestMethod.POST)
 	public String saveIssue(@ModelAttribute IssueForm issueForm, Model model) {
 		User assignee = userRepository.findOne(issueForm.getAssignedTo());
-		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getCategory(), issueForm.getDifficulty(), assignee);
+		Issue newIssue = new Issue(issueForm.getTitle(), issueForm.getDescription(), issueForm.getCategory(), issueForm.getDifficulty(), assignee, Stage.ENTERED);
 		issueRepository.save(newIssue);
 		return "redirect:/issues";
 	}
@@ -83,10 +83,18 @@ public class IssueController {
 		  difficultiesB.add(20f);
 		  difficultiesB.add(40f);
 		  difficultiesB.add(100f);
-		 }		
+		 }
+		List<Stage> stagesC = searchTerms.getStage();
+		if (stagesC == null){
+			stagesC = new ArrayList<Stage>();
+		    stagesC.add(Stage.ENTERED);
+		    stagesC.add(Stage.PROGRESSING);
+		    stagesC.add(Stage.REVIEWING);
+		    stagesC.add(Stage.ACCEPTED);
+		}
 		logger.info(categoriesA);
 		logger.info(difficultiesB);
-		List<Issue> searchResults = issueRepository.findByTitleLikeAndDescriptionLikeAndCategoryInAndDifficultyIn("%" + searchTerms.getTitle() + "%","%" + searchTerms.getDescription() + "%", categoriesA, difficultiesB);
+		List<Issue> searchResults = issueRepository.findByTitleLikeAndDescriptionLikeAndCategoryInAndDifficultyInAndStageIn("%" + searchTerms.getTitle() + "%","%" + searchTerms.getDescription() + "%", categoriesA, difficultiesB, stagesC);
 		model.addAttribute("issues", searchResults);
 		logger.info(searchResults);
 		return "issueList";	

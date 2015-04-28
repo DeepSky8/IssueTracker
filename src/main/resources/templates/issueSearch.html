@@ -30,6 +30,11 @@
 			    	  <input type="checkbox" th:field="*{difficulties}" th:value="20" />20
 			    	  <input type="checkbox" th:field="*{difficulties}" th:value="40" />40
 			    	  <input type="checkbox" th:field="*{difficulties}" th:value="100" />100
+			    	<label for="stage">Stage</label>
+			    	  <input type="checkbox" th:field="*{stage}" th:value="ENTERED" />Issues just entered
+			    	  <input type="checkbox" th:field="*{stage}" th:value="PROGRESSING" />Issues in progress
+			    	  <input type="checkbox" th:field="*{stage}" th:value="REVIEWING" />Issues being reviewed
+			    	  <input type="checkbox" th:field="*{stage}" th:value="ACCEPTED" />Issues that have been accepted
 			    </tr>
 			</tbody>
 		</table>

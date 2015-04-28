@@ -9,6 +9,7 @@ import com.kyrlach.issuetracker.issue.Issue;
 import com.kyrlach.issuetracker.issue.IssueRepository;
 import com.kyrlach.issuetracker.login.User;
 import com.kyrlach.issuetracker.login.UserRepository;
+import com.kyrlach.issuetracker.issue.Stage;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -32,8 +33,8 @@ public class Application implements CommandLineRunner {
 		userRepository.save(tom);
 		userRepository.save(ben);
 		userRepository.save(joel);
-		issueRepository.save(new Issue("Purple", "doesn't work", "Feature", 2, tom));
-		issueRepository.save(new Issue("Blue", "too much work", "Problem", 40, ben));
-		issueRepository.save(new Issue("Green", "need more", "Enhancement", 5, joel));
+		issueRepository.save(new Issue("Purple", "doesn't work", "Feature", 2, tom, Stage.ENTERED));
+		issueRepository.save(new Issue("Blue", "too much work", "Problem", 40, ben, Stage.PROGRESSING));
+		issueRepository.save(new Issue("Green", "need more", "Enhancement", 5, joel, Stage.REVIEWING));
 	}
 }
