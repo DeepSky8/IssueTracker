@@ -89,6 +89,7 @@ public class IssueController {
 			stagesC = new ArrayList<Stage>();
 		    stagesC.add(Stage.ENTERED);
 		    stagesC.add(Stage.PROGRESSING);
+		    stagesC.add(Stage.FILIBUSTERED);
 		    stagesC.add(Stage.REVIEWING);
 		    stagesC.add(Stage.ACCEPTED);
 		}
