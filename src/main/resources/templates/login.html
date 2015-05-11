@@ -4,13 +4,8 @@
 	    <title>Issue Tracker -- Login</title>
 	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
-	    <link rel="stylesheet" href="main.css" />
-	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 	</head>
 	<body>
-	    <div th:if="${not #lists.isEmpty(errors)}" style="border: 1px solid red">
-	        <div th:each="error : ${errors}" th:text="${error}">Danger!</div>
-	    </div>
 	    <form th:object="${loginForm}" th:action="@{/}" action="#" method="post" class="pure-form">
 	    	<fieldset>
 	    		<legend>Welcome to Issue Tracker</legend>
@@ -19,6 +14,5 @@
 	    		<button type="submit" class="pure-button pure-button-primary">Sign In</button>
 	    	</fieldset>
 	    </form>
-	    <script type="text/javascript" src="login.js"> </script>
 	</body>
 </html>
