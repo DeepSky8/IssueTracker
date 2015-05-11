@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Issue Tracker -- Search</title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" />
+	</head>
+    <form th:object="${searchTerms}" th:action="@{/issues/search}" action="#" method="post">
+	  <body>
+		<table class="pure-table pure-table-striped">
+			<tbody>
+			    <tr>
+			        <label for="findByTitleLike">Title</label>
+			    	  <textarea th:field="*{title}">Search Title</textarea>
+			    	<label for="findByDescriptionLike">Description</label>
+			    	  <textarea th:field="*{description}">Search Description</textarea>
+			    	<label for="categories">Search these Categories</label>
+	    		      <input type="checkbox" th:field="*{categories}" th:value="Feature" />New Feature Requests
+	    		      <input type="checkbox" th:field="*{categories}" th:value="Problem" />Reported Problems
+	    		      <input type="checkbox" th:field="*{categories}" th:value="Enhancement" />Enhancement Requests	    		      
+			    	<label for="listDifficultiesIn">Difficulties</label>
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="0" />0
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value=".5"  />.5
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="1" />1
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="2" />2
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="3" />3
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="5" />5
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="8" />8
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="13" />13
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="20" />20
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="40" />40
+			    	  <input type="checkbox" th:field="*{difficulties}" th:value="100" />100
+			    	<label for="stage">Stage</label>
+			    	  <input type="checkbox" th:field="*{stage}" th:value="ENTERED" />Issues just entered
+			    	  <input type="checkbox" th:field="*{stage}" th:value="PROGRESSING" />Issues in progress
+			    	  <input type="checkbox" th:field="*{stage}" th:value="REVIEWING" />Issues being reviewed
+			    	  <input type="checkbox" th:field="*{stage}" th:value="ACCEPTED" />Issues that have been accepted
+			    </tr>
+			</tbody>
+		</table>
+		<button type="submit" class="pure-button pure-button-primary">Search</button>
+	  </body>
+    </form>
+</html>

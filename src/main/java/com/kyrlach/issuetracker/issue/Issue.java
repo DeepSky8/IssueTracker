@@ -9,29 +9,54 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
+import com.kyrlach.issuetracker.login.User;
+import com.kyrlach.issuetracker.issue.Stage;
+
 
 @Entity
 public class Issue {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
-    
     private String title;
     private String description;
+    private String category;
+    private float difficulty;
+	private Stage stage;
+    @ManyToOne
+    private User assignedTo;
+
     
     @OneToMany
     @Cascade({CascadeType.ALL})
     private List<Comment> comments;
     
-    public Issue() {}
+	public Issue() {}
     
-    public Issue(String title, String description) {
+    public Issue(String title, String description, String category, float difficulty, User assignedTo, Stage stage) {
     	this.title = title;
     	this.description = description;
-    	this.comments = new ArrayList<Comment>();
+    	this.category= category;
+    	this.assignedTo = assignedTo;
+    	this.difficulty = difficulty;
+    	this.stage = stage;
+    	}
+    
+    public Stage getStage() {
+		return stage;
+	}
+
+	public void setStage(Stage stage) {
+		this.stage = stage;
+	}
+
+    public class Process {
+    	Stage stage;
     }
+    
+      public void Process(Stage stage) {
+    	  this.stage = stage;
+      }
 
 	public long getId() {
 		return id;
@@ -54,6 +79,13 @@ public class Issue {
 		this.description = description;
 	}
 	
+    public String getCategory() {
+		return category;
+    }
+        
+	public float getDifficulty() {
+		return difficulty;
+	}
 	public List<Comment> getComments() {
 		return comments;
 	}
@@ -61,8 +93,26 @@ public class Issue {
 		this.comments = comments;
 	}
 
+	
+	public void setDifficulty(float difficulty) {
+		this.difficulty = difficulty;
+	}
+	
+	public User getAssignedTo() {
+		return assignedTo;
+	}
+
+	public void setAssignedTo(User assignedTo) {
+		this.assignedTo = assignedTo;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
 	@Override
     public String toString() {
-    	return "Issue("+id+","+title+","+description+")";
+    	return "Issue("+id+","+title+","+description+","+category+","+difficulty+","+assignedTo+","+stage+")";
     }
+
 }
