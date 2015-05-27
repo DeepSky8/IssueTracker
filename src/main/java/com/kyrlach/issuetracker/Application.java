@@ -26,7 +26,6 @@ public class Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... arg0) throws Exception {
-
 		User tom = new User("Tom", "Test");
 		User ben = new User("Ben", "Secr3t");
 		User joel = new User("Joel", "1234");

@@ -1,13 +1,19 @@
 package com.kyrlach.issuetracker.issue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.kyrlach.issuetracker.login.User;
 import com.kyrlach.issuetracker.issue.Stage;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 
 @Entity
@@ -24,12 +30,17 @@ public class Issue {
     private User assignedTo;
 
     
+    @OneToMany
+    @Cascade({CascadeType.ALL})
+    private List<Comment> comments;
+    
 	public Issue() {}
     
     public Issue(String title, String description, String category, float difficulty, User assignedTo, Stage stage) {
     	this.title = title;
     	this.description = description;
     	this.category= category;
+    	this.comments = new ArrayList<Comment>();
     	this.assignedTo = assignedTo;
     	this.difficulty = difficulty;
     	this.stage = stage;
@@ -79,6 +90,13 @@ public class Issue {
 	public float getDifficulty() {
 		return difficulty;
 	}
+	public List<Comment> getComments() {
+		return comments;
+	}
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
 	
 	public void setDifficulty(float difficulty) {
 		this.difficulty = difficulty;
